@@ -1,9 +1,12 @@
 # The Context Oscillator: Why AI Memory Should Breathe
 
-**Author:** Joel Robinson
-**Published:** August 2026
-**DOI:** [Zenodo DOI here]
-**Status:** v1.0
+**Author:** Joel Robinson 
+
+**Published:** August 2026 
+
+**DOI:** doi.org/10.5281/zenodo.21811408 
+
+**Status:** v1.0 
 
 ---
 
