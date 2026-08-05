@@ -3,8 +3,8 @@
 **Author:** Joel Robinson
 **Date:** 2026-08-05
 **Status:** Draft v0.2
-**Repository:** TBD
-**DOI:** Pending Zenodo
+**Repository:** [the-context-oscillator](https://github.com/jtrthehax/the-context-oscillator/)
+**DOI:** 10.5281/zenodo.21811408
 
 **Related works:**
 - Robinson (2026) — Hallucinations Are Not Random
@@ -825,5 +825,5 @@ external_confirmations:
   - "EC-001: DeepSeek cold read — independent confirmation
      of core claim — 2026-08-05"
 next_action: "Zenodo DOI — mint and timestamp"
-github_repo: "context-oscillator"
-zenodo_doi: "pending"
+github_repo: "the-context-oscillator"
+zenodo_doi: "10.5281/zenodo.21811408"
