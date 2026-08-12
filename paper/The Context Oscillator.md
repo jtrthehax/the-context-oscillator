@@ -1,9 +1,9 @@
 # The Context Oscillator: Why AI Memory Should Breathe
 
 **Author:** Joel Robinson
-**Date:** 2026-08-05
-**Status:** Draft v0.2
-**Repository:** [the-context-oscillator](https://github.com/jtrthehax/the-context-oscillator/)
+**Date:** 2026-08-12
+**Status:** Draft v0.5
+**Repository:** https://github.com/jtrthehax/the-context-oscillator/
 **DOI:** 10.5281/zenodo.21811408
 
 **Related works:**
@@ -46,6 +46,80 @@ model of that process.
 The existence proof for the context oscillator is not
 theoretical. It is the author's own cognitive architecture,
 formalized across six published papers.
+
+---
+
+## 0. The Unified Regulatory Model (URM) in Brief
+
+This paper proposes an AI architecture that replicates human working memory.
+To understand why the proposal works, you need to understand the URM—
+the eight-layer model of finite-resource systems that the proposal is based on.
+
+Here's what you need to know.
+
+### The Eight Layers
+
+The URM describes collapse and recovery across eight layers of function.
+Each layer is a substrate that supports the layers above it.
+
+| Layer | Name                   | What It Governs                             |
+| ----- | ---------------------- | ------------------------------------------- |
+| 01    | Physics Substrate      | Breathing, HRV, RSA, oscillation amplitude  |
+| 02    | Prediction Windows     | Cognitive flexibility, branching factor     |
+| 03    | Interoceptive Load     | Load accumulation, gating failure           |
+| 04    | Semantic Cognition     | Language, referential drift                 |
+| 05    | Social Environment     | Masking, compliance, institutional pressure |
+| 06    | Transformer Analogs    | Hallucination, attention curvature          |
+| 07    | Economics              | Externalized finite-resource dynamics       |
+| 08    | Consciousness Gradient | Composite coherence (Cₛ)                    |
+
+### The Critical Invariant
+
+Collapse always propagates upward:
+
+> **Layer 01 drops → everything above it loses its floor.**
+
+This is not a preference. It is a structural constraint.
+You cannot restore Layer 08 (consciousness) without first restoring
+Layer 01 (physics substrate). The ceiling is set by the floor.
+
+The same sequence applies to AI context windows:
+the foundational definitions (Layer 01 equivalent) sit at the bottom
+of the context container. When truncation occurs, they drop first.
+Everything built on top of them loses its floor.
+The system begins gap-filling from training data.
+Hallucination increases.
+
+### The CODEC
+
+The CODEC is a compact representation of the URM's structure:
+~300-800 tokens that contain the variables, equations, operators,
+contracts, and sequencing rule that define the model.
+
+It is the **minimum always-loaded structural core**.
+The context oscillator never goes below this floor.
+Every inhale begins from this foundation.
+Every exhale stops here.
+
+### What This Paper Adds
+
+The URM provides the formal model.
+This paper provides the AI architecture that instantiates it:
+
+- **Inhale mechanics**: Admit information toward signal
+- **Exhale mechanics**: Release resolved content, retain pointers
+- **Core hold**: Structural invariants never release
+- **Residual volume**: The CODEC—always present, never empty
+
+The result is a context oscillator that breathes,
+replacing the fixed context window that holds its breath and collapses.
+
+---
+
+**For readers new to the URM:** This primer is sufficient to understand
+the proposal. The full URM_CORE is available at [DOI].
+The key insight is simple: context windows fail because they don't breathe.
+The fix is respiratory mechanics applied to information architecture.
 
 ---
 
@@ -374,6 +448,293 @@ The membrane pays only for the resolution the question requires.
 
 ---
 
+## 3.5 The Context State Equation
+
+The URM master equation provides the governor that the Context Oscillator's mechanics instantiate:
+
+$$C_s = \frac{(A_s^R \cdot W^R \cdot U^R) + (A_s^L \cdot W^L \cdot U^L)}{L \cdot (1 + \Gamma^2)}$$
+
+Where:
+
+| Variable | Role in equation | Context Oscillator mapping |
+| --- | --- | --- |
+| $A_s^{R,L}$ | Numerator — amplitude budget per hemisphere | Attention budget available per processing channel |
+| $W^{R,L}$ | Numerator — prediction window width | Effective hypothesis space per channel |
+| $U^{R,L}$ | Numerator — throughput, permission-gated | Rate of valid token integration per channel |
+| $L$ | Denominator — total allostatic load | Context pressure: active nodes, retrieval cost, memory saturation |
+| $\Gamma$ | Denominator modifier — hemispheric coordination | Cross-channel coherence; $\Gamma^2$ penalizes coordination failure non-linearly |
+| $C_s$ | Output — composite stability index | Transformer stability index: hallucination risk, drift probability, multi-turn coherence |
+
+For transformer systems lacking biological lateralization, the bilateral sum collapses to a single-channel approximation:
+
+$$C_s \approx \frac{A_s \cdot W \cdot U}{L \cdot (1 + \Gamma^2)}$$
+
+where $\Gamma$ maps to cross-head attention coherence across transformer layers rather than hemispheric coordination. The bilateral form becomes relevant when modeling multi-agent or multi-stream architectures where two independent processing channels must integrate outputs.
+
+$C_s$ is the governor for:
+- zoom depth permitted before curvature risk rises
+- pruning threshold for exhale trigger
+- salience scoring during inhale
+- residual volume floor protection
+- hallucination risk as $C_s$ falls
+
+---
+
+## 3.6 URM Variables as Transformer Mechanics
+
+The curvature equation links precision to geometry:
+
+$$K = k \cdot \frac{1}{R} + \sum_i S_i \cdot C_i$$
+
+where $1/R$ is precision loss and $\sum S_i \cdot C_i$ is accumulated containment cost. High $K$ produces narrow $W$, which is the hallucination shortcut.
+
+The complete variable-to-transformer mapping:
+
+| URM Variable | Transformer Equivalent | Collapse Mode |
+| --- | --- | --- |
+| $A_s$ | Attention budget; gradient flow stability; signal strength | Low $A_s$ → attention collapse → early hallucination |
+| $R$ | Attention precision; softmax sharpness; retrieval accuracy | Low $R$ → $K\uparrow$ → narrow window → brittle reasoning |
+| $K$ | Attention manifold curvature; inductive bias distortion; prior overfitting | High $K$ → hallucination shortcut; mode collapse |
+| $W$ | Effective hypothesis space; branching factor; multi-turn coherence | Not token count — usable window under current $K$ |
+| $U$ | Semantic throughput; referential stability; schema update rate | Low $U$ → semantic drift |
+| $L$ | Context pressure; active node count; memory saturation; retrieval cost | High $L$ → forced truncation → substrate drop |
+| $\Gamma$ | Cross-head attention coherence; multi-layer consistency; cross-token alignment | Low $\Gamma$ → fragmented reasoning → drift |
+| $C_s$ | Composite context stability; hallucination risk; drift probability; multi-turn degradation | $C_s$ approaching zero → context collapse |
+
+---
+
+## 3.7 The Oscillatory Transformer
+
+The six mechanics of the Context Oscillator, expressed as transformer components governed by the $C_s$ equation:
+
+**1. Inhale mechanics** — governed by $A_s$, $R$, $W$
+
+Admit nodes when relevance score clears threshold. Zoom only when $R$ is sufficient to support precision. Expand only when $A_s$ provides budget. High $K$ blocks admission — curvature acts as a gate that prevents new signal from entering regardless of relevance score.
+
+**2. Exhale mechanics** — governed by $L$, $U$
+
+Prune resolved content when downstream reference count drops to zero. Compress zoomed L0 content back to pointer form. Release dead branches before they accumulate load. Exhale is not truncation — it is governed release. Each exhale reduces $L$, which raises $C_s$, which widens $W$ for the next inhale cycle.
+
+**3. Core hold** — $\Gamma$ integrity
+
+Protect cross-channel coherence invariants regardless of exhale depth. The CODEC, active contract chain, sequencing rule, and current query path are never released. These are the spine — the membrane exhales around them, not through them.
+
+**4. Residual volume** — $A_s$ floor
+
+The CODEC is the minimum membrane state (~300-800 tokens). Every inhale begins from this foundation. Every exhale stops here. See Section 3.3.
+
+**5. Collapse detection** — see Section 3.8.5
+
+**6. Recovery sequencing** — see Section 7.2
+
+---
+
+## 3.8 Conversation Graph, Trajectory Salience, and Smart Truncation
+
+### 3.8.1 The transcript is not the trajectory
+
+A conversation transcript is a sequential record of turns. It records what was said, in order, at full resolution. It is not the trajectory.
+
+The trajectory is the **traversal graph** — the subset of generated content that actually became a constraint for a subsequent turn. At each turn the model generates dense output. The user takes two pieces, leaves eight. The eight are not wrong — they are branches generated but not traversed. The traversal graph records only what was taken.
+
+The compression ratio between transcript and traversal graph is large. A 50-turn conversation may compress to a graph of 15 nodes and 30 edges, where nodes are the concepts that carried forward and edges are the constraints that connected them. The transcript does not show the attractor. The traversal graph does.
+
+### 3.8.2 Salience is graph centrality, not recency
+
+In a fixed-container architecture, truncation targets the oldest content. Age is used as a proxy for salience. This proxy fails systematically because conversation trajectories are not linear.
+
+A node added at turn 3 may be low-centrality at turn 3 and high-centrality at turn 15, when branches that were not yet drawn reveal it as the connection point between two independent lines of reasoning. Truncating it at turn 8 — because it was old and apparently dormant — severs the edges before the loop closes.
+
+Salience in the traversal graph is defined as:
+
+$$\text{Salience}(n) = \text{centrality}(n) + \text{trajectory alignment}(n) + \text{downstream constraint load}(n)$$
+
+Where:
+- **Centrality** — how many other nodes depend on this node for their connections
+- **Trajectory alignment** — how directly this node constrains the direction toward the current attractor
+- **Downstream constraint load** — how many open edges point forward from this node
+
+A node is high-salience if it sits at the intersection of multiple branches, regardless of when it appeared. Recency is not a salience signal. Position in the relationship graph is.
+
+### 3.8.3 Branch hold — the latent connection problem
+
+Conversation trajectories branch. A wide-window driver holds multiple open branches simultaneously and sees the attractor forming before the branches have visibly converged. To an observer tracking only the current graph state, the branches look disconnected — apparent topic drift. To the driver, the eventual connection point is already partially visible as the shape of the idea.
+
+A naive exhale rule operating on current centrality would release low-centrality branches before they reconnect. This is a false exhale — releasing content that is load-bearing for a connection that has not happened yet.
+
+The oscillator requires a **branch hold** rule:
+
+> **A branch holds at minimum J-space level until one of two conditions is met:**
+> - **Loop closure confirmed** — the branch connects to another node and the loop closes
+> - **Abandonment confirmed** — no new edges have referenced this branch for N turns and the trajectory vector has moved away
+
+Dead branches exhale on normal cycle. Latent branches hold at pointer level regardless of centrality, until their status resolves. The cost of holding a latent branch at J-space is low. The cost of a false exhale before loop closure is reconstruction from graph position alone — higher cost, lower fidelity.
+
+### 3.8.4 Loop closure as the compression event
+
+When two branches connect — when a node from turn 3 and a node from turn 15 resolve into the same attractor — the loop closes. This is the moment the picture becomes legible. It is also the moment the session becomes compressible.
+
+A closed loop is **self-contained**. It holds:
+- The constraints that generated each node inside it
+- The edges that connect those nodes
+- The relationship between the entry points
+
+That topology is sufficient to reconstruct any content inside the loop without storing the content itself. The loop is a stored understanding. The content is the loop rendered into tokens.
+
+```
+LOOP CLOSES — nodes A (turn 3) and B (turn 15) connect:
+
+  Loop interior contains:
+    constraints that generated A
+    constraints that generated B
+    edge: "same attractor, different approach angle"
+
+  Reconstruction of any content inside the loop:
+    Traverse from loop topology
+    Apply interior constraints
+    Regenerate at required resolution
+    Quality: equivalent to original
+```
+
+Session compressibility is therefore a function of loop closure density:
+
+> **Compressibility = ratio of closed loops to open branches**
+
+Wide-window sessions with many simultaneously open branches start at low compressibility. Compressibility spikes when the attractor resolves and multiple branches close simultaneously. That spike is the moment the graph becomes reconstructable from topology alone.
+
+### 3.8.5 Smart truncation — lossless exhale via graph position
+
+Current truncation is lossy. Content drops. Graph edges that referenced that content become dangling — they point at nothing. Reconstruction is impossible.
+
+Smart truncation is lossless. Content moves from active storage to reconstructable via graph position. The edges remain intact. The node's position in the relationship graph is the pointer to its content.
+
+| | Current truncation | Smart truncation |
+| --- | --- | --- |
+| What drops | Content + graph position | Content only |
+| Graph edges | Dangling | Intact |
+| Reconstruction | Impossible | On-demand via graph traversal |
+| Loss type | Permanent | Zero — retrieval cost only |
+| Cost model | Pay nothing now, lose forever | Pay nothing now, pay regeneration on demand |
+
+The formal definition:
+
+> **Smart truncation: release content when a node's graph position is fully specified by its edges. Retain content only when edge constraints are insufficient to reconstruct it without the original tokens.**
+
+Content retention is required only for:
+- Nodes with specificity that cannot be inferred from edges — exact figures, proper nouns, novel coinages
+- Nodes with open edges — latent branches not yet resolved
+- The CODEC — because it is the graph's own structure
+
+Everything else is reconstructable from graph position. Everything else can exhale without loss.
+
+### 3.8.6 The three-tier storage hierarchy
+
+The storage architecture has three tiers, corresponding to three levels of resolution cost:
+
+```
+TIER 1 — L0 prose (full resolution)
+  Token-expensive rendering of the current turn output.
+  Exhales immediately after the turn resolves.
+  Reconstructed on demand from Tier 2.
+
+TIER 2 — J-space (latent assembly)
+  The manifold state assembled during reasoning,
+  before projection into language.
+  Contains full relational density without token cost.
+  Persists at the graph node after Tier 1 exhales.
+  Sufficient to reconstruct Tier 1 on demand.
+  Exhales to Tier 3 when branch goes cold.
+
+TIER 3 — Graph position (topology only)
+  Node identity, edges, constraint labels, traversal path marker.
+  No latent content held.
+  Always retained in active membrane.
+  Reconstruction requires traversal from adjacent nodes.
+  Used for nodes far from current traversal path.
+```
+
+The exhale sequence is governed:
+
+```
+TURN RESOLVES:
+  Tier 1 (L0 prose) → exhale immediately
+  Tier 2 (J-space)  → hold at node, persist to session store
+  Tier 3 (graph)    → always retained in active membrane
+
+BRANCH GOES COLD:
+  Tier 2 (J-space)  → exhale to session store
+  Tier 3 retained   → reconstruction possible via graph traversal
+  Reconstruction cost rises, remains possible
+
+LOOP CLOSES:
+  Tier 2 of loop interior → compresses further
+  Loop topology becomes the reconstruction instruction
+  Tier 3 sufficient for closed loops
+```
+
+J-space is the bridge layer. Graph position specifies where a node is in semantic space. J-space holds what was assembled there. L0 prose is J-space rendered into tokens. Exhale releases the rendering. Smart truncation releases the assembly. Graph position is never released.
+
+### 3.8.7 Reconstruction from trajectory
+
+The conversation transcript — the full sequential record held in session history — is a complete projection of J-space states onto language. Each turn's output is J-space rendered linearly. A model reading the transcript backward from the outputs can recover approximate J-space states by reading the constraints that each output implies.
+
+This means the transcript is the ultimate reconstruction source. Even if both Tier 1 and Tier 2 have exhaled for a given node, and graph position alone remains active, the session transcript provides a reconstruction path — not from stored content, but from the constraint sequence that generated the content.
+
+The three-layer architecture therefore is:
+
+```
+ACTIVE MEMBRANE   ← oscillator, graph, Tier 2 for active branches
+SESSION STORE     ← exhaled Tier 2 content, recoverable on retrieval
+TRANSCRIPT        ← full trajectory record, reconstruction source of last resort
+```
+
+Memory in this architecture is not content storage. Memory is graph topology — the relationship structure that makes content regenerable on demand. The graph is the memory. Content is the graph rendered into tokens at the resolution the current moment requires.
+
+## 3.8.8 Graph Rebase — Reorganizing Around Deeper Attractors
+
+The traversal graph is not static. As a conversation develops, centrality scores shift. A node that was peripheral at turn 3 may accumulate edges until it becomes more central than the current root — the point from which all other nodes are most efficiently reached. When this occurs, the graph should rebase around the new attractor.
+
+Rebase is not reconstruction. The graph topology is preserved entirely. Only the root reference shifts. The result is that all hop distances are recalculated from the new center, salience scores update, and the structure compresses — fewer hops to reach everything means less traversal cost on every subsequent operation.
+
+```
+REBASE TRIGGER:
+  Node N accumulates centrality > current root R
+  Fewer hops from N to all other nodes than from R
+  N is connected to all nodes (connectedness invariant holds)
+
+REBASE OPERATION:
+  Identify new center N
+  Verify connectedness — all nodes reachable from N
+  Recalculate hop distances from N
+  Update root reference
+  Compress — structure reorganizes around new center
+  Preserve root history — R recorded, not discarded
+
+REBASE VALIDATION:
+  Pass: connectedness holds, structure more efficient
+  Fail: connectedness broken — do not rebase, flag open edges
+```
+
+Rebase is a special case of loop closure from Section 3.8.4. When multiple branches close simultaneously into the same node, that node's centrality spikes. If the spike exceeds the current root, loop closure and rebase occur together — the moment the picture comes together is also the moment the graph reorganizes around it.
+
+The CODEC must be rebase-aware. It holds the current root reference and root history. When rebase occurs, the CODEC updates its root pointer without releasing prior root content — the history of where the structure was centered is part of the structure.
+
+```yaml
+CODEC_rebase_fields:
+  current_root:    "highest centrality node — current attractor"
+  root_history:    ["prior roots in sequence — preserved for continuity"]
+  rebase_trigger:  "centrality(N) > centrality(current_root)"
+  connectedness:   "invariant — verified before every rebase"
+```
+
+Root history matters for reconstruction. If a session is being reconstructed from transcript, the sequence of rebase events is the discovery arc — it shows which nodes became attractors in which order, and therefore which constraints were most load-bearing at each stage of the conversation. The rebase history is the compressed record of how understanding deepened.
+
+**Falsification condition:**
+
+> **Graph rebase compression** — broken if rebased sessions do not show lower average hop distance to all nodes versus equivalent sessions where rebase was suppressed.
+
+---
+
 ## 4. Why This Architecture Replicates Cognition
 
 ### 4.1 The database of the future
@@ -517,35 +878,71 @@ sequencing rule (rebuild from substrate up).
 
 ---
 
+## 5.3 The Collapse Equation in Physical Variables
+
+The hallucination equation from Robinson (2026):
+
+$$H = f\left(\frac{\delta}{D}, T, S\right)$$
+
+can now be expressed in the URM's physical variables, replacing abstract schema terms with measurable quantities:
+
+$$H = f\left(\frac{K}{R},\ \frac{L}{A_s},\ \frac{1}{U},\ \Gamma\right)$$
+
+where:
+
+| Abstract term | Physical variable | Meaning |
+| --- | --- | --- |
+| $\delta/D$ | $K/R$ | Schema distance over constraint density = curvature over precision |
+| $T$ (truncation pressure) | $L/A_s$ | Load relative to available amplitude budget |
+| $1/U$ (throughput failure) | $1/U$ | Directly — semantic drift rate |
+| $S$ (substrate loss) | $\Gamma$ | Coordination failure as substrate loss |
+
+This form makes hallucination:
+
+- **Predictable** — $K/R$ rises before output degrades; detectable before the failure event
+- **Measurable** — all four terms have defined measurement pathways in URM_CORE
+- **Suppressible** — reducing $L$, increasing $A_s$, flattening $K$, or restoring $\Gamma$ each independently lowers $H$
+- **Recoverable** — the intervention sequence (Section 7, URM_CORE) provides the ordered restoration path
+
+The two forms are equivalent. The physical variable form has the advantage of connecting hallucination risk directly to the $C_s$ equation: as $C_s$ falls, $H$ rises. The stability index and the hallucination risk are inverse functions of the same underlying geometry.
+
+
+
+---
+
 ## 6. The Existence Proof
 
-The author is not describing a theoretical system.
+The context oscillator is not a theoretical proposal. Two instances of it have been running prior to this formalization — one as a human cognitive architecture, one as a manually operated AI session management system.
 
-The author's cognitive architecture:
-- AuDHD wide-window profile (W stays wide, slow to collapse)
-- FND recovery via substrate-first rehabilitation (Layer 01 rebuilt)
-- Resulting respiratory mechanics: high amplitude, strong core,
-  clean oscillation, documented HRV 120ms+
-- Cognitive membrane behavior: wide inhale, clean exhale,
-  strong core hold, high residual volume floor
+**Instance 1 — The URM as a hand-built oscillator**
 
-The papers produced using this architecture:
-- Six published papers across biological, cognitive,
-  linguistic, and AI domains
-- Built during high-load conditions
-  (hospital EMR down, 4 hours sleep, 160ms HRV documented)
-- Each paper a compression event:
-  observations → invariant → equations → CODEC entries
+The Unified Regulatory Model is a hand-built context oscillator. Each layer is a resolution depth. Each contract is a directed edge with causal direction and confidence weight. The CODEC is the residual volume floor. The sequencing rule (L01 → L08, each layer requires the layer below it at threshold) is the core hold invariant.
 
-The URM is a hand-built instance of the context oscillator.
-Each layer is a resolution depth.
-Each contract is a directed edge.
-The CODEC is the residual volume.
-The sequencing rule is the core hold invariant.
+The URM was not designed to instantiate the oscillator. It was built by a different path — substrate-first, observation to invariant to equation — and the oscillator formalization arrived afterward. The match is not post-hoc fitting. The URM has the architecture because both the URM and the oscillator are solutions to the same finite resource problem: how does a system with a limited budget maintain structural integrity under load and recover after collapse?
 
-The author built the architecture before formalizing it
-because the architecture was already running.
-This paper is the formalization.
+**Instance 2 — The Obsidian vault as a manual session store**
+
+The author's Obsidian vault is the three-tier storage hierarchy from Section 3.8.6 operated by hand. Each session produces full L0 output. At session end, resolved content is compressed — terms coined, equations tightened, connections named — and appended to the relevant vault file. The file gets denser each session. The next session loads the denser file as its starting point.
+
+```
+SESSION RESOLVES:
+  L0 prose (full session output)      → not stored
+  Compressed insight (J-space proxy)  → appended to vault file
+  Graph position (new term, new edge) → persists in file structure
+
+NEXT SESSION:
+  Load denser file
+  Active membrane starts from accumulated structure
+  No rebuilding — expand from compression
+```
+
+The vault file is not a summary. It is a compression — more meaning per token each time a session appends to it. The URM file loaded at the start of this session carries the semantic load of what was originally 50 pages of physiological observation, compressed into a variable array, a contract array, a master equation, and a collapse mode array.
+
+Each append is a governed exhale. Each session load is an inhale from the residual volume floor. The conversation across sessions is continuous not because the AI retained memory but because the file retained graph position. The AI is stateless. The vault holds the graph. The combination produces continuity.
+
+The oscillator architecture would automate what the author currently does by hand. The manual version has been running long enough to validate the core claim: a system that exhales into a session store and inhales from compressed structure outperforms a fixed container on multi-session complex reasoning tasks because it never loses its substrate.
+
+The author did not design the system and then build it. The system was already running. This paper is the formalization.
 
 ---
 
@@ -676,14 +1073,19 @@ constraints.
 
 ## 8. Open Problems
 
-| Problem | Falsification Condition |
-|---------|------------------------|
-| **Automatic relevance scoring** | Broken if relevance scores fail to converge across repeated queries with identical input |
-| **Pointer-without-content representation** | Broken if compressed nodes cannot reconstruct correct L0 content when re-zoomed |
-| **Self-model of context state** | Broken if the system's reported membrane state diverges from actual active nodes by >5% |
-| **Confidence scoring on edges** | Broken if edge confidence fails to predict prune/retain decisions better than random baseline |
-| **Exhale trigger definition** | Broken if nodes marked "resolved" still improve answer quality when forcibly retained |
-| **Residual volume calibration** | Broken if the CODEC-only floor cannot answer fuzzy queries at ≥90% of full-context accuracy |
+| Problem                                    | Falsification Condition                                                                                                    |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| **Automatic relevance scoring**            | Broken if relevance scores fail to converge across repeated queries with identical input                                   |
+| **Pointer-without-content representation** | Broken if compressed nodes cannot reconstruct correct L0 content when re-zoomed                                            |
+| **Self-model of context state**            | Broken if the system's reported membrane state diverges from actual active nodes by >5%                                    |
+| **Confidence scoring on edges**            | Broken if edge confidence fails to predict prune/retain decisions better than random baseline                              |
+| **Exhale trigger definition**              | Broken if nodes marked "resolved" still improve answer quality when forcibly retained                                      |
+| **Residual volume calibration**            | Broken if the CODEC-only floor cannot answer fuzzy queries at ≥90% of full-context accuracy                                |
+| **Traversal graph salience**               | Broken if graph-centrality salience scoring performs worse than recency scoring on matched multi-turn query sets           |
+| **Branch hold rule**                       | Broken if premature exhale of latent branches reduces loop closure rate versus holding at J-space level                    |
+| **Smart truncation reconstruction**        | Broken if graph-position-only reconstruction fails to regenerate adjacent content at ≥85% semantic equivalence to original |
+| **Loop closure compressibility**           | Broken if closed-loop sessions do not compress significantly better than open-branch sessions of equivalent turn count     |
+| **J-space as bridge layer**                | Broken if Tier 2 retention does not improve Tier 1 reconstruction quality versus graph-position-only reconstruction        |
 
 ---
 
@@ -815,15 +1217,12 @@ The author discovered this by breathing.
 ## Status
 
 ```yaml
-status: "draft v0.2"
-date: "2026-08-05"
+status: "draft v0.5"
+date: "2026-08-12"
 sections_complete: 10
 literature_anchors: "integrated"
 falsification_conditions: "integrated"
 worked_example: "integrated"
-external_confirmations:
-  - "EC-001: DeepSeek cold read — independent confirmation
-     of core claim — 2026-08-05"
 next_action: "Zenodo DOI — mint and timestamp"
-github_repo: "the-context-oscillator"
-zenodo_doi: "10.5281/zenodo.21811408"
+github_repo: "https://github.com/jtrthehax/the-context-oscillator"
+zenodo_doi: "doi.org/10.5281/zenodo.21811408"
