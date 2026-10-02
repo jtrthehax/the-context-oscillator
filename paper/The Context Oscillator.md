@@ -489,11 +489,11 @@ $C_s$ is the governor for:
 ## 3.6 Variable Mappings to Transformer Mechanics
 
 Curvature ($K$) in attention space links precision loss
-($1/R^*$) directly to context pressure ($L^*$):
+($1/R^\ast$) directly to context pressure ($L^\ast$):
 
-$$K = k \cdot \frac{1}{R^*} + \sum_i S_i \cdot C_i$$
+$$K = k \cdot \frac{1}{R^\ast} + \sum_i S_i \cdot C_i$$
 
-High $K$ compresses effective window width $W^*$,
+High $K$ compresses effective window width $W^\ast$,
 accelerating premature context collapse.
 
 | Canonical Variable | Substrate Layer | Transformer Projection | Collapse Signature |
@@ -516,8 +516,8 @@ transformer components governed by the $C_s$ equation:
 **1. Inhale mechanics** — governed by $A_s^\ast$, $R^\ast$, $W^\ast$
 
 Admit nodes when relevance score clears threshold. Zoom only
-when $R^*$ is sufficient to support precision. Expand only
-when $A_s^*$ provides budget. High $K$ blocks admission —
+when $R^\ast$ is sufficient to support precision. Expand only
+when $A_s^\ast$ provides budget. High $K$ blocks admission —
 curvature acts as a gate that prevents new signal from entering
 regardless of relevance score.
 
@@ -1449,7 +1449,7 @@ This paper connects concepts found within other papers and its extensions:
 | Paper                                                | Contribution                                                                                                        | DOI / GitHub                                               |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | **Manifold Schema**                                  | Curvature, window width, residual volume, geometric collapse. Is the central repository for all work going forward. | 10.5281/zenodo.21939439 • GitHub: *manifold-schema*        |
-| **LLM State Specification / session-state-pipeline** | Session state, routing fractions, cache behavior, update rate                                                       | 10.5281/zenodo.20820099 • GitHub: *session-state-pipeline* |
+| **LLM State Specification / session-state-pipeline** | Session state, routing fractions, cache behavior, update rate                                                       | 10.5281/zenodo.20820098 • GitHub: *session-state-pipeline* |
 
 Each paper is a compression event.
 Each one found the invariant hiding under the noise.
