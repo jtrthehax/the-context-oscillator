@@ -513,7 +513,7 @@ accelerating premature context collapse.
 The six mechanics of the Context Oscillator, expressed as
 transformer components governed by the $C_s$ equation:
 
-**1. Inhale mechanics** — governed by $A_s^*$, $R^*$, $W^*$
+**1. Inhale mechanics** — governed by $A_s^\ast$, $R^\ast$, $W^\ast$
 
 Admit nodes when relevance score clears threshold. Zoom only
 when $R^*$ is sufficient to support precision. Expand only
@@ -521,23 +521,23 @@ when $A_s^*$ provides budget. High $K$ blocks admission —
 curvature acts as a gate that prevents new signal from entering
 regardless of relevance score.
 
-**2. Exhale mechanics** — governed by $L^*$, $\Theta^*$
+**2. Exhale mechanics** — governed by $L^\ast$, $\Theta^\ast$
 
 Prune resolved content when downstream reference count drops
 to zero. Compress zoomed L0 content back to pointer form.
 Release dead branches before they accumulate load. Exhale is
 not truncation — it is governed release. Each exhale reduces
-$L^*$, which raises $C_s$, which widens $W^*$ for the next
+$L^\ast$, which raises $C_s$, which widens $W^\ast$ for the next
 inhale cycle.
 
-**3. Core hold** — $\Theta^*$ integrity
+**3. Core hold** — $\Theta^\ast$ integrity
 
 Protect cross-channel coherence invariants regardless of exhale
 depth. The CODEC, active contract chain, sequencing rule, and
 current query path are never released. These are the spine —
 the membrane exhales around them, not through them.
 
-**4. Residual volume** — $A_s^*$ floor
+**4. Residual volume** — $A_s^\ast$ floor
 
 The CODEC is the minimum membrane state (~300-800 tokens).
 Every inhale begins from this foundation. Every exhale stops here.
@@ -1005,7 +1005,7 @@ Replacing abstract schema parameters with the canonical
 variables from Central Reference v1.8 (§3.1, §3.8),
 the hallucination coefficient $H$ is defined as:
 
-$$H = f\left(\frac{K}{R^*},\ \frac{L^*}{A_s^*},\ \frac{1}{\mathcal{U}},\ \Lambda\right)$$
+$$H = f\left(\frac{K}{R^{\ast}}, \frac{L^{\ast}}{A_s^{\ast}}, \frac{1}{\mathcal{U}}, \Lambda\right)$$
 
 Where:
 
@@ -1014,7 +1014,7 @@ Where:
   ($\delta / D$). High curvature under low precision forces
   early branch commitment.
 
-- **$\frac{L^*}{A_s^*}$ (Load / Amplitude Ratio):**
+- **$\frac{L^ast}{A_s^\ast}$ (Load / Amplitude Ratio):**
   Represents context saturation drag relative to active
   attention budget.
 
@@ -1044,8 +1044,8 @@ This form makes hallucination:
   detectable before the failure event
 - **Measurable** — all four terms have defined measurement
   pathways in URM_CORE
-- **Suppressible** — reducing $L^*$, increasing $A_s^*$,
-  flattening $K$, or restoring $\Theta^*$ each independently
+- **Suppressible** — reducing $L^\ast$, increasing $A_s^\ast$,
+  flattening $K$, or restoring $\Theta^\ast$ each independently
   lowers $H$
 - **Recoverable** — the intervention sequence (Section 7,
   URM_CORE) provides the ordered restoration path
