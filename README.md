@@ -6,7 +6,7 @@
 
 **DOI:** doi.org/10.5281/zenodo.21811408 
 
-**Status:** v1.0 - draft
+**Status:** v1.0
 
 ---
 ## The Core Claim
@@ -177,9 +177,10 @@ The manual version has been running long enough to validate the core claim.
 ```
 context-oscillator/
 ├── paper/
-│   └── context_oscillator_v1.0.md    # Full paper
+│   └── context_oscillator.md    # Full paper
 ├── codec/
 │   └── URM_CODEC.yaml                # Reference implementation
+│   └── central_reference_codec.yaml  # using central reference as a source to capture compressed invariants
 ├── examples/
 │   └── worked_example_session.md     # Six-step oscillator walkthrough
 └── README.md
