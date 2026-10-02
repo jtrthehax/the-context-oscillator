@@ -4,7 +4,7 @@
 
 **Updated:** October 2026 
 
-**DOI:** doi.org/10.5281/zenodo.21811408 
+**DOI:** 10.5281/zenodo.21811407
 
 **Status:** v1.0
 
@@ -208,7 +208,7 @@ context-oscillator/
   title     = {The Context Oscillator: Why AI Memory Should Breathe},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.21811408}
+  doi       = {10.5281/zenodo.21811407}
 }
 ```
 
