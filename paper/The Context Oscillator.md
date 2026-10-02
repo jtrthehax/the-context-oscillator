@@ -1547,8 +1547,6 @@ The author discovered this by breathing.
   Management for Long-Horizon Agents. *arXiv preprint*
   arXiv:2608.21690.
 
--
-
 - Robinson, J. (2026). Unified Regulatory Model.
   Zenodo. https://doi.org/10.5281/zenodo.20417459
 
