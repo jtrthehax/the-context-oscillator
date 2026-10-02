@@ -2,11 +2,11 @@
 
 **Author:** Joel Robinson 
 
-**Published:** August 2026 
+**Updated:** October 2026 
 
 **DOI:** doi.org/10.5281/zenodo.21811408 
 
-**Status:** v0.5 - draft
+**Status:** v1.0 - draft
 
 ---
 ## The Core Claim
