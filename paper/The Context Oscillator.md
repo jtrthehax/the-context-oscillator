@@ -1,7 +1,7 @@
 
 # The Context Oscillator: Why AI Memory Should Breathe
 
-**Version 1.0 — Integrated Edition**
+**Version 1.0**
 
 ## Abstract
 
@@ -1444,17 +1444,12 @@ invariant applied to a system with no recovery operator.
 
 ### 9.4 For the author's research program
 
-This paper completes a circuit across the Robinson Trilogy
-and its extensions:
+This paper connects concepts found within other papers and its extensions:
 
-| Paper | What It Does |
-|-------|-------------|
-| **Physics as the Missing Component** | Substrate governs all layers |
-| **Hallucinations Are Not Random** | H = f(δ/D, T, S) |
-| **Language as a Typed System** | Compression requires invariants |
-| **The Ghost in the Scaffolding** | Co-constructed agent |
-| **URM Core** | Eight-layer model with contracts |
-| **The Context Oscillator** | AI memory should breathe |
+| Paper                                                | Contribution                                                                                                        | DOI / GitHub                                               |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Manifold Schema**                                  | Curvature, window width, residual volume, geometric collapse. Is the central repository for all work going forward. | 10.5281/zenodo.21939439 • GitHub: *manifold-schema*        |
+| **LLM State Specification / session-state-pipeline** | Session state, routing fractions, cache behavior, update rate                                                       | 10.5281/zenodo.20820099 • GitHub: *session-state-pipeline* |
 
 Each paper is a compression event.
 Each one found the invariant hiding under the noise.
@@ -1579,5 +1574,5 @@ falsification_conditions: "integrated + cross-architecture convergence condition
 worked_example: "integrated"
 next_action: "distribute to Scroll, CLM, and DeepSeek authors"
 github_repo: "https://github.com/jtrthehax/the-context-oscillator"
-zenodo_doi: "doi.org/10.5281/zenodo.21811408"
+zenodo_doi: "doi.org/10.5281/zenodo.21811407"
 ```
