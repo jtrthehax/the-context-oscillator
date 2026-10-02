@@ -190,13 +190,10 @@ context-oscillator/
 
 ## Related Work
 
-|Paper|DOI|
-|---|---|
-|Hallucinations Are Not Random|10.5281/zenodo.21244811|
-|Language as a Typed System|10.5281/zenodo.21362260|
-|The Ghost in the Scaffolding|10.5281/zenodo.21362260|
-|Physics as the Missing Component|10.5281/zenodo.21512678|
-|Unified Regulatory Model|10.5281/zenodo.20417459|
+| Paper                                                | Contribution                                                                                                        | DOI / GitHub                                               |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Manifold Schema**                                  | Curvature, window width, residual volume, geometric collapse. Is the central repository for all work going forward. | 10.5281/zenodo.21939439 • GitHub: *manifold-schema*        |
+| **LLM State Specification / session-state-pipeline** | Session state, routing fractions, cache behavior, update rate                                                       | 10.5281/zenodo.20820098 • GitHub: *session-state-pipeline* |
 
 ---
 
