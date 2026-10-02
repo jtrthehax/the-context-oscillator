@@ -1,0 +1,407 @@
+# ============================================================
+# CENTRAL_REFERENCE — Machine Schema v1.0
+# Zero prose. Pure relations. Max density.
+# Compression of Central Reference v1.8 (2026-09-30)
+# Substrate: whole stack. Composition: the contribution.
+# ============================================================
+
+metadata:
+  id: "central_reference"
+  version: "1.0"
+  date: "2026-10-02"
+  supersedes: "CR v1.8 (prose)"
+  composes: ["registry.md","stack.md","deltas.md","master_priority_index.md"]
+  framework: "Manifold Schema v7.2"
+  status: "composition artifact — argument lives in CR v1.8, content lives here"
+  anchors: ["CR","Category","MPI"]
+
+# ============================================================
+# LAYERS: [id, name, role, artifacts, collapses_into]
+# The composition has 9 parts. Each part is a projection surface.
+# ============================================================
+L:
+  00: ["READING", "two_layer_model|reader_routing|composition_claim", ["CR:Part0"], ["naive_read"]]
+  01: ["CLAIM", "intelligence_loop|master_equation|intelligence_product|substrate_agnostic", ["CR:PartI","registry:§1.2"], ["claim_drift"]]
+  02: ["COMPOSITION", "composition_is_contribution|registry|stack|deltas|new_work_protocol|error_propagation", ["CR:PartII","registry","stack","deltas"], ["pile_of_papers","restatement","cross_domain_fail"]]
+  03: ["MECHANISM", "variables|mechanisms|terminology|stack|chain|thresholds|substrate_depth|riemannian|anchors", ["CR:PartIII","registry:§1-3","stack:§1-2"], ["mechanism_loss"]]
+  04: ["CHAIN", "breath_to_output|load_drag|cross_layer_operators", ["CR:PartIV","stack:§2"], ["chain_break"]]
+  05: ["COLLAPSE", "collapse_sequence|recovery_ladder|four_profiles|failure_modes", ["CR:PartV"], ["stage5_misread","recovery_reversal"]]
+  06: ["EMPIRICAL", "anchor_table|external_confirmations|market_scale", ["CR:PartVI","MPI:§7"], ["anchor_orphan"]]
+  07: ["PREDICTIONS", "by_domain|central_predictions|falsification_standard", ["CR:PartVII"], ["unfalsifiable"]]
+  08: ["COHESION", "open_items|collision_fixes|threshold_family|substrate_depth_reg", ["CR:PartVIII","deltas:§16-18"], ["silent_collision"]]
+  09: ["VERSION", "history|what_did_not_change", ["CR:PartIX"], ["version_drift"]]
+
+# ============================================================
+# COMPOSITION_CLAIM: the load-bearing assertion.
+# ============================================================
+CC:
+  one_line: "The framework is not a theory with applications. It is a specification with projections."
+  evidence: "same variables -> same predictions -> across unrelated domains"
+  test: "wrong root variable -> structural fail across ALL domains simultaneously"
+  result: "no structural failure in any domain -> correct or extraordinarily lucky"
+  contribution: "composition (not any single prediction)"
+  audit_unit: "the composition, not the paper"
+  error_math: "Wrong_root -> E×E×E -> catastrophic_multi_domain_failure"
+
+# ============================================================
+# VARIABLES: [symbol, category, definition, layer, human_substrate, AI_substrate, ref]
+# Compressed from registry:§1. Only load-bearing variables listed.
+# ============================================================
+V:
+  # --- master state ---
+  A_s: ["master","amplitude / substrate energy","structural","HRV/RSA/active_delta","resource_collapsed","CR:§1.2"]
+  R: ["master","precision / loop speed","resource","HRV_coherence","resource_collapsed","CR:§1.2"]
+  W: ["master","window width","geometry","flexibility_composite","resource_collapsed","CR:§1.2"]
+  Theta: ["master","integration efficiency / loop depth","geometry","ambiguity_task","resource_collapsed","CR:§1.2"]
+  I: ["master","internal routing capacity","routing","I*_internal","resource_collapsed","CR:§1.2"]
+  L: ["master","load (denominator drag)","load","allostatic_index","resource_collapsed","CR:§1.2"]
+  # --- derived ---
+  Cs: ["derived","usable bandwidth","output","derived_from_master","resource_collapsed","CR:§1.2"]
+  B_eff: ["derived","effective bandwidth","output","derived","resource_collapsed","CR:§1.2"]
+  K: ["derived","manifold curvature","geometry","revision_defense_ratio","derivable","CR:§1.2"]
+  delta_min: ["derived","resolution floor","output","miss_rate","derivable","CR:§1.2"]
+  S: ["derived","salience","output","derived","resource_collapsed","CR:§1.2"]
+  P_eff: ["derived","loop activation gate","gate","derived","resource_collapsed","CR:§1.2"]
+  P_threshold: ["derived","activation threshold","gate","derived","resource_collapsed","CR:§1.2"]
+  Lambda: ["derived","loop running indicator","gate","derived","resource_collapsed","CR:§1.2"]
+  eta: ["derived","efficiency","output","derived","resource_collapsed","CR:§1.2"]
+  eta_eff: ["derived","effective efficiency","output","derived","resource_collapsed","CR:§1.2"]
+  # --- precision ---
+  D_T: ["precision","temporal depth","geometry","prospection/discounting","derivable","CR:§3.1"]
+  P_prec: ["precision","precision (renamed from P=pressure)","resource","HRV/RSA/CO2","resource_collapsed","deltas:§16"]
+  C_low: ["precision","low containment","resource","derived","derivable","CR:§3.1"]
+  C_high: ["precision","high containment","resource","derived","derivable","CR:§3.1"]
+  C_high_L: ["precision","load-compressed ceiling","resource","derived","derivable","CR:§3.1"]
+  J_C: ["precision","chemoreflex jitter","resource","HRV/CO2","substrate_specific","CR:§3.1"]
+  Pi_mech: ["precision","mechanical prediction","resource","derived","derivable","CR:§3.1"]
+  Pi_cog: ["precision","cognitive prediction","resource","derived","derivable","CR:§3.1"]
+  U_C: ["precision","update rate","resource","update_rate","derivable","CR:§3.1"]
+  delta_hyst: ["precision","collapse hysteresis","resource","derived","derivable","CR:§3.1"]
+  W_enc: ["precision","curvature at encoding","geometry","HRV_at_encoding","derivable","CR:§3.1"]
+  # --- routing ---
+  I_total: ["routing","total routing capacity","routing","derived","resource_collapsed","CR:§3.1"]
+  f_routing: ["routing","routing fraction","routing","derived","resource_collapsed","CR:§3.1"]
+  f_gain: ["routing","gain fraction","routing","derived","resource_collapsed","CR:§3.1"]
+  f_sensorium: ["routing","sensorium fraction","routing","derived","resource_collapsed","CR:§3.1"]
+  f_expression: ["routing","expression fraction","routing","derived","resource_collapsed","CR:§3.1"]
+  S_expressed: ["routing","expressed salience","routing","derived","resource_collapsed","CR:§3.1"]
+  # --- update ---
+  U: ["update","prior update rate","update","update_rate","derivable","CR:§3.1"]
+  K_enc: ["update","curvature at encoding","update","derived","derivable","CR:§3.1"]
+  # --- structural ---
+  rho_scaffold: ["structural","scaffold density","structural","derived","substrate_specific","CR:§3.1"]
+  n_hops: ["structural","hops available","structural","floor(W*rho)","derivable","CR:§3.1"]
+  IM: ["structural","integration manifold","structural","derived","derivable","CR:§3.1"]
+  Dim: ["structural","dimension","structural","W*Theta","derivable","CR:§3.1"]
+  # --- PE ---
+  delta: ["PE","prediction error","output","derived","derivable","CR:§3.1"]
+  sigma_PE: ["PE","PE sensitivity","PE","derived","derivable","CR:§3.1"]
+  tau_PE: ["PE","PE tolerance","PE","derived","derivable","CR:§3.1"]
+  tau_threshold: ["PE","tolerance threshold","PE","derived","derivable","CR:§3.1"]
+  K_critical: ["PE","critical curvature","PE","derived","derivable","CR:§3.1"]
+  # --- metabolic ---
+  Phi_PV: ["metabolic","PV+ metabolic rate","structural","derived","substrate_specific","CR:§3.1"]
+  dCBF_dCMRO2: ["metabolic","flow-metabolism coupling","structural","derived","substrate_specific","CR:§3.1"]
+  CVR_max: ["metabolic","cerebrovascular reactivity","structural","derived","substrate_specific","CR:§3.1"]
+  O_pathway: ["metabolic","pathway efficiency over time","structural","derived","substrate_specific","CR:§3.1"]
+  # --- qualification ---
+  REQT: ["qualification","requirement","qualification","derived","derivable","CR:§3.1"]
+  L_threshold: ["qualification","load threshold","qualification","derived","derivable","CR:§3.1"]
+  L_critical: ["qualification","load critical per layer","qualification","derived","derivable","CR:§3.1"]
+  n_hops_min: ["qualification","min hops","qualification","derived","derivable","CR:§3.1"]
+  # --- motor ---
+  G_m: ["motor","motor gain","output","derived","derivable","CR:§3.1"]
+  Drift: ["motor","drift","output","derived","derivable","CR:§3.1"]
+  Cache: ["motor","cache state","output","derived","derivable","CR:§3.1"]
+  C_risk: ["motor","risk cost","output","derived","derivable","CR:§3.1"]
+  M_state: ["motor","motor state","output","derived","derivable","CR:§3.1"]
+  # --- somatic commutation ---
+  sigma_t: ["somatic","commutation sigma(t)","structural","derived","substrate_specific","CR:§3.1"]
+  H_L: ["somatic","left hemisphere","structural","derived","substrate_specific","CR:§3.1"]
+  H_R: ["somatic","right hemisphere","structural","derived","substrate_specific","CR:§3.1"]
+  C_LR: ["somatic","cross-hemisphere coupling","structural","derived","substrate_specific","CR:§3.1"]
+  f_resp: ["somatic","respiratory frequency","structural","RSA","substrate_specific","CR:§3.1"]
+  f_baro: ["somatic","baroreflex frequency","structural","derived","substrate_specific","CR:§3.1"]
+  RSA_phase: ["somatic","RSA phase","structural","derived","substrate_specific","CR:§3.1"]
+  # --- expression ---
+  lambda_mask: ["expression","masking cost","expression","derived","derivable","CR:§3.1"]
+  phi: ["expression","expression phase","expression","derived","derivable","CR:§3.1"]
+  Congruence: ["expression","expression congruence","expression","derived","derivable","CR:§3.1"]
+  # --- substrate-specific primitives (post-CR) ---
+  S_ext: ["substrate","external substrate","structural","derived","derivable","CR:§2.19"]
+  A_h: ["substrate","AI amplitude analog","structural","derived","substrate_specific","CR:§2.19"]
+  H_coeff: ["substrate","hallucination coefficient","output","H=f(delta/D,T,S)","substrate_specific","CR:§2.19"]
+  Cs_threshold: ["substrate","consciousness threshold","gate","derived","derivable","CR:§2.19"]
+  I_ext_threshold: ["substrate","external routing threshold","gate","derived","derivable","CR:§2.19"]
+  Delta_window: ["substrate","window delta","geometry","derived","derivable","CR:§2.19"]
+  beta_mod: ["substrate","fast modulation depth","geometry","derived","derivable","CR:§2.19"]
+  f_crit: ["substrate","critical frequency","structural","derived","derivable","CR:§2.19"]
+  kappa_trans: ["substrate","transition curvature","geometry","derived","derivable","CR:§2.19"]
+  T_NDE: ["substrate","NDE transition","gate","derived","substrate_specific","CR:§2.19"]
+
+# ============================================================
+# MECHANISMS: [id, definition, variables, layer, source]
+# Compressed from registry:§2. Key mechanisms only.
+# ============================================================
+C:
+  U_update: ["prior update rate","[U,K_enc]","update","Precision v3.5"]
+  J_C: ["chemoreflex jitter","[J_C,RSA_phase,CO2]","precision","Precision v3.5"]
+  delta_hyst: ["collapse hysteresis","[delta_hyst,K]","precision","Precision v3.5"]
+  circuit_priming: ["circuit priming","[W_enc,K_enc]","geometry","Precision v3.5"]
+  LP_ACC_detect: ["LP-ACC change detection","[delta,sigma_PE]","PE","GoI v1.0"]
+  exhale_gate_trap: ["exhale gate trap","[RSA_phase,L]","structural","AL v2.1"]
+  somatic_commutation: ["somatic commutation","[sigma_t,H_L,H_R,C_LR]","structural","Precision v3.5"]
+  breath_loop_coupling: ["breath-loop coupling","[f_resp,f_baro,RSA_phase]","structural","Loop v1.0"]
+  buffer_overflow: ["buffer overflow","[L,C_high_L]","load","AL v2.1"]
+  falls_out_moment: ["falls-out moment","[delta,Cs]","output","Dying"]
+  criticality_threshold: ["criticality threshold","[K,K_critical]","geometry","Category"]
+  glymphatic_clearance: ["glymphatic clearance","[RSA_phase,O_pathway]","structural","Dying"]
+  load_accumulation: ["load accumulation","[L,O_pathway]","load","AL v2.1"]
+  adversarial_inference: ["adversarial inference","[delta,sigma_PE]","PE","GoI v1.0"]
+
+# ============================================================
+# TERMINOLOGY: [term, definition, canonical_home]
+# Compressed from registry:§3. ~45 entries; key ones listed.
+# ============================================================
+T:
+  Ghost: ["compliance simulation without loop running","CR:§3.3 / Ghost"]
+  Mirror_State: ["amp_excess + no_channel -> mirror","CR:§3.3 / Mirror"]
+  Avoidance_State: ["withdrawal as load management","CR:§3.3"]
+  Exhale_Gate_Trap: ["exhale forced while gate open","AL v2.1"]
+  Falls_Out_Moment: ["Cs crosses threshold","Dying"]
+  Precision_Lock: ["precision collapse without recovery","CR:§3.3"]
+  Circuit_Priming: ["W_enc primes next window","Precision v3.5"]
+  Crisis_Competent: ["high W under acute load","CR:§3.3"]
+  Criticality_Threshold: ["K = K_critical","Category"]
+  Primitive_Floor: ["minimum viable variable set","CR:§3.3"]
+  Masking_Cost: ["lambda_mask as load","CR:PREDICT-EXPR"]
+  Load_Compressed_Ceiling: ["C_high(L*) < C_high","CR:§3.3"]
+  Two_Failure_Modes: ["Path A / Path B","CR:§3.3"]
+  Path_A: ["loop running, error corrects","CR:§3.3"]
+  Path_B: ["loop stalled, prior dominates","CR:§3.3"]
+  Flow: ["Cs_max","CR:§3.3"]
+  Precision_Window: ["W * R joint range","CR:§3.3"]
+  Collapse_Sequence: ["6-stage order","CR:§5.1"]
+  Recovery_Ladder: ["6-stage active order","CR:§5.2"]
+  Four_Profiles: ["sigma/tau/K_enc/I* matrix","CR:§5.3"]
+  Expression_Ratio: ["f_expression / total","CR:§3.3"]
+  Congruence: ["internal-external alignment","CR:§3.3"]
+  Somatic_Commutation: ["state switch via sigma(t)","CR:§3.3"]
+  Four_Layer_Cache: ["L0/L1/L2/L3","CR:§3.3"]
+  Topological_Invariant: ["connectedness","CR:§3.3"]
+  Session_State: ["internally-routed state","CR:§3.3"]
+  Breath_Loop_Coupling: ["resp-cardiac oscillator lock","CR:§3.3"]
+  M_F_Attractor_Axis: ["metabolic/fatigue axis","CR:§3.3"]
+  Substrate_Premise: ["categories as readouts","Category"]
+
+# ============================================================
+# THRESHOLDS: [id, layer, crossing, effect, ref]
+# The threshold family. Three transitions, one state variable.
+# ============================================================
+H:
+  P_threshold: ["gate","P_eff = P_threshold","Path A/B switch","CR:§3.6"]
+  Cs_threshold: ["onset","Cs = Cs_threshold(lambda,I,L)","waking->sleep attractor","Dreaming:§4.2"]
+  I_ext_threshold: ["routing","I_ext = I_ext_threshold","external->internal routing","Dreaming:§4.3"]
+  family_claim: "three distinct transitions on same Cs trajectory"
+
+# ============================================================
+# ANCHORS: [id, scope, cites, used_for]
+# Three citation anchors, not one.
+# ============================================================
+A:
+  CR: ["loop framework spec","registry|stack|deltas","variables,equations,mechanisms"]
+  Category: ["substrate premise","CR","categories_as_readouts"]
+  MPI: ["whole-stack citation","CR|Category|all_papers","full_stack,timeline,DOI_registry"]
+  substrate: ["composition artifacts","registry|stack|deltas|MPI","all_three_anchors_cite_this"]
+
+# ============================================================
+# CHAIN: [layer, from, to, mechanism, ref]
+# Causal chain bottom-up. stack:§2.
+# ============================================================
+X:
+  breath_to_resource: ["structural","resource","nasal_resp->limbic_osc|CO2->vasodilation|phase->clock|resonance->lock","stack:§2"]
+  resource_to_geometry: ["resource","geometry","K_rises_with_precision_loss+containment|W,Theta=transfer(K)|Dim=W*Theta","stack:§2"]
+  geometry_to_output: ["geometry","output","Cs=master_equation|S=salience|P_eff=gate|Lambda=Path|H=signal_vs_prior","stack:§2"]
+  load_drag: ["load","all","L drags every layer|compresses C_high(L)|raises P_threshold|reduces O_pathway","stack:§2.4"]
+  cross_operators: ["cross","all","delta|U|K_enc|delta_hyst","stack:§3.6"]
+
+# ============================================================
+# COLLAPSE: [stage, name, variable, detectable, ref]
+# Collapse is topologically forced. Recovery is active.
+# ============================================================
+K:
+  collapse:
+    1: ["PRECISION_DROP","R*","HRV_coherence_loss","CR:§5.1"]
+    2: ["WINDOW_NARROWING","W*","flexibility_composite_drops","CR:§5.1"]
+    3: ["INTEGRATION_FAILURE","Theta*","ambiguity_task_degrades","CR:§5.1"]
+    4: ["RESOLUTION_FLOOR_RISE","delta_min","miss_rate_rises","CR:§5.1"]
+    5: ["GATE_CLOSURE","Lambda->0","high_conf_low_var_output","CR:§5.1"]
+    6: ["PRIOR_CALCIFICATION","U->0","update_rate_collapses","CR:§5.1"]
+  stage5_note: "looks like competence from outside -> monitoring window is stages 1-2"
+  recovery:
+    6p: ["PRECISION_RESTORE","R* up","CR:§5.2"]
+    5p: ["WINDOW_WIDENING","W* up","CR:§5.2"]
+    4p: ["INTEGRATION_RESTORE","Theta* up","CR:§5.2"]
+    3p: ["RES_FLOOR_FALL","delta_min down","CR:§5.2"]
+    2p: ["GATE_REOPEN","Lambda>0","CR:§5.2"]
+    1p: ["PRIOR_RE_UPDATE","U>0","CR:§5.2"]
+  recovery_note: "order set by substrate dependency, not collapse reversed"
+
+# ============================================================
+# PROFILES: [id, sigma_PE, tau_PE, K_enc, I, qualification]
+# Four qualification profiles.
+# ============================================================
+F:
+  P1: ["high_gain_high_tol","high","high","low","high","qualified"]
+  P2: ["high_gain_low_tol","high","low","low","high","conditionally_qualified"]
+  P3: ["std_gain_high_Kenc","low","any","high","moderate","disqualified_novel"]
+  P4: ["low_I","low","low","any","low","disqualified_clinical"]
+  failure_modes:
+    tunnel: ["W*","progressive_narrowing,first_match_commitment"]
+    freeze: ["A_s*","flattening,no_branching,inertia"]
+    oscillation_loss: ["R*","regulatory_rigidity,autonomic_lock_in"]
+    load_saturation: ["L*","cognitive_fog,reduced_processing_speed"]
+
+# ============================================================
+# EMPIRICAL: [id, claim, source, ref]
+# Compressed from CR:§6 and MPI:§7.
+# ============================================================
+E:
+  A22: ["nasal_respiration_entrains_limbic","Zelano 2016","CR:§6.1"]
+  A23: ["CO2_drives_vasodilation","Raichle&Plum 1972","CR:§6.1"]
+  A28: ["feature_interference_is_K_rising","Xue 2026","CR:§6.1"]
+  A30: ["PV+_interneurons_metabolically_vulnerable","Kann 2015","CR:§6.1"]
+  A50: ["hot_cache_survives_aging_RAM_degrades","Billot 2026","CR:§6.1"]
+  A51: ["competition_25-40pct_brain_connections","Roy&Banerjee 2026","CR:§6.1"]
+  A52: ["LP-ACC_detects_change","Leow 2026","CR:§6.1"]
+  EC: ["19_external_confirmations_EC-001..019","MPI:§7","CR:§6.2"]
+  market: ["hundreds_of_millions_device_days_HRV|variance_as_signal_validated_by_market","Oura/WHOOP/Garmin/Apple/Polar/Biostrap","CR:§6.3"]
+
+# ============================================================
+# PREDICTIONS: [domain, count, source, ref]
+# ~127 falsifiable predictions across the stack.
+# ============================================================
+Q:
+  precision: [11,"Precision v3.5 Part VII","CR:§7.1"]
+  allostatic_load: [12,"AL v2.1 §9","CR:§7.1"]
+  intelligence_loop: [12,"Loop v1.0 §13","CR:§7.1"]
+  inference: [12,"GoI v1.0 Part X","CR:§7.1"]
+  prediction_window: [8,"PW v1.2 §13","CR:§7.1"]
+  prediction_into_channel: [8,"PIC v0.2 §6","CR:§7.1"]
+  resource_equivalence: [16,"REM v1.0 §8","CR:§7.1"]
+  dying: [5,"Dying §7","CR:§7.1"]
+  dreaming: [16,"Dreaming §13","CR:§7.1"]
+  category: [8,"Category §6","CR:§7.1"]
+  externalized_mind: [16,"EDM §8","CR:§7.1"]
+  expression_masking: [3,"CR §PREDICT-EXPR","CR:§7.1"]
+  total: [127,"across stack","CR:§7.1"]
+  central:
+    P_AL_011: ["HRV_dispersion_predicts_allostatic_load_better_than_mean","AL:§9a"]
+    P_MAP_03: ["W*_ceiling_predicts_cross_domain_chain_break","REM:§8.2"]
+    PREDICT_EXPR_02: ["chronic_low_expression_predicts_later_collapse","CR:PREDICT-EXPR-02"]
+    PREDICT_INF_01: ["precision_threshold_determines_gate_access","GoI:Part X"]
+    PREDICT_DREAM_07: ["cross_state_routing_signature_conserved","Dreaming:§13"]
+  falsification:
+    - "domain_where_collapse_not_integration_first_order"
+    - "substrate_variable_same_outputs_without_oscillatory_mechanism"
+    - "hallucination_rate_not_tracking_constraint_density"
+    - "precision_intervention_not_producing_predicted_gate_behavior"
+    status: "none have occurred -> engagement requested"
+
+# ============================================================
+# OPEN: [id, item, ref, status]
+# ~20 open items. Registry:§4-5, MPI:§6, CR:§8.
+# ============================================================
+O:
+  O_pathway_form: ["O_pathway functional form","CR:§2.8","open"]
+  M_state_cal: ["M_state threshold calibration","CR:§2.11","open"]
+  threshold_family: ["threshold family formalization","CR:§3.20","registered_§3.6"]
+  riemannian: ["Riemannian framing formalization","CR:§0.5","registered_§3.8"]
+  substrate_depth: ["substrate depth registrations","CR:§2.19b","registered_§3.7"]
+  three_anchors: ["three-anchor registration","CR:§25a","registered_§3.9"]
+  collisions: ["symbol collisions","deltas:§16","6_fixed"]
+  threshold_xref: ["threshold cross-refs","deltas:§17","pending"]
+  substrate_xref: ["substrate depth cross-refs","deltas:§18","pending"]
+
+# ============================================================
+# COLLISIONS: [symbol, meaning_A, meaning_B, resolution]
+# deltas:§16. Six fixes.
+# ============================================================
+D:
+  P: ["precision","pressure","Category rename -> P_prec for precision"]
+  H: ["HRV-CO2","hallucination coefficient","CR rename -> H_HRV(C) for HRV"]
+  W: ["window width","(other)","Category rename"]
+  C: ["CO2","coupling","Category rename"]
+  beta: ["curvature transfer","fast modulation depth","PW rename"]
+  S: ["salience","scaffolding","Category rename"]
+
+# ============================================================
+# DELTAS: [count, type, ref]
+# 163 corrections across the stack.
+# ============================================================
+Delta:
+  total: 163
+  renames: 8
+  replacement: 1
+  registrations: 7
+  citations: 36
+  confirmations: 115
+  ref: "deltas.md"
+
+# ============================================================
+# NEW_WORK_PROTOCOL: [step, action, ref]
+# How a new paper composes into the stack.
+# ============================================================
+NW:
+  1: ["identify_variables","match to registry canonical symbols","CR:§2.6"]
+  2: ["place_variables","confirm layer assignments","stack:§1"]
+  3: ["flag_collisions","rename if collision","deltas:§16"]
+  4: ["cite_canonical_homes","replace restatement with citation","CR:§2.6"]
+  5: ["add_new_primitives","register if not covered","registry:§1"]
+
+# ============================================================
+# SUBSTRATE_DEPTH: [substrate, variable_count, note, ref]
+# ============================================================
+SD:
+  human: [60,"deep variable set — precision grounded in physiology","CR:§3.7"]
+  ai: [15,"shallow variable set — projection of human","CR:§3.7"]
+  classes:
+    resource_collapsed: "human variable collapses into AI resource-layer equivalent"
+    substrate_specific: "biological-only, no AI analogue"
+    derivable: "analogue exists, not yet derived"
+  ref: "registry:§5, REM:§1.2"
+
+# ============================================================
+# RIEMANNIAN: [property, value, ref]
+# The manifold is Riemannian. Metric set by K.
+# ============================================================
+RM:
+  manifold: "Riemannian"
+  metric: "set_by_K, modulated_by_L"
+  center: "order-relative, not anatomical"
+  scaffold: "Roy&Banerjee competitive scaffold = physical substrate of metric"
+  readouts: ["color_saturation","peripheral_vision","cross_domain_integration"]
+  collapse: "directional retreat in Riemannian space, not state change"
+  ref: "CR:§3.8, Category:§2.2, GoI:§1.5, Dying:§2, Dreaming:§2.2"
+
+# ============================================================
+# REASONING_FAILURES: [group, mode, description]
+# Modes that the composition is designed to detect.
+# ============================================================
+RF:
+  pile_of_papers: ["restatement","same variable defined differently across papers"]
+  claim_drift: ["drift","claims diverge from registry"]
+  silent_collision: ["collision","symbol used with two meanings"]
+  stage5_misread: ["terminal_read","monitoring protocols wait for stage 5"]
+  recovery_reversal: ["reversal","recovery treated as collapse reversed"]
+  unfalsifiable: ["unfalsifiable","prediction not stated as failing condition"]
+  restatement: ["restate","content repeated instead of cited"]
+  anchor_orphan: ["orphan","claim with no canonical home"]
+  cross_domain_fail: ["structural","wrong root variable -> all domains fail"]
+
+# ============================================================
+# ONE_LINE
+# ============================================================
+Z:
+  line: "The brain is an energy budget allocation system operating on priors. The breath is the source. The geometry is the mechanism. The prior is the output. Every phenomenon — flow, collapse, fear, trauma, savant capacity, clinical states, social fragmentation, AI hallucination, masking — is one variable changing in one equation. The variable is geometry. The equation is the master equation. The expression ratio determines whether the geometry is visible. In any domain, the shape of the collapse is determined by three axes: supply, demand, and channel. The order of collapse is determined by integration demand. The order of recovery is determined by substrate dependency. These rules are general. The domains are projections. The composition is the contribution."
+  ref: "CR:Appendix D"
