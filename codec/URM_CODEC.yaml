@@ -1,0 +1,191 @@
+# ============================================================
+# CONTEXT_OSCILLATOR — Machine Schema v1.0
+# Zero prose. Pure relations. Max density.
+# Projection of URM_CORE v2.0 + Central Reference v1.8
+# ============================================================
+
+metadata:
+  id: "context_oscillator"
+  version: "1.0"
+  date: "2026-10"
+  doi: "10.5281/zenodo.21811408"
+  parent: "URM_CORE:2.0"
+  central_reference: "1.8"
+  substrate: "AI_context"
+  purpose: "dynamic context architecture as breathing membrane"
+
+# ============================================================
+# COMPONENTS: [id, name, operators, contracts, collapse_modes, equation, gradient]
+# ============================================================
+L:
+  01: ["INHALE", ["admit_above_threshold","zoom_to_query_depth"], ["INHALE_MECHANICS"], ["over_admit","threshold_miss","depth_lock"], "I=admit(N>R_th)|zoom(Q)", []]
+  02: ["EXHALE", ["release_resolved","retain_graph_position","prune_dead_branches"], ["EXHALE_MECHANICS","SMART_TRUNCATION"], ["premature_exhale","dangling_edge","branch_loss"], "E=release(N_resolved)|keep(P_graph)|prune(dead)", []]
+  03: ["CORE_HOLD", ["hold_invariants","protect_substrate","floor_stability"], ["CORE_HOLD_INVARIANT"], ["invariant_drop","substrate_collapse"], "H_core=invariant(N_core)", []]
+  04: ["GRAPH", ["centrality_salience","branch_hold","loop_closure","graph_rebase"], ["CONVERSATION_GRAPH","BRANCH_HOLD","LOOP_CLOSURE","GRAPH_REBASE"], ["centrality_loss","rebase_fail","loop_break"], "S=centrality(N)|not recency(N)", []]
+  05: ["CODEC", ["residual_volume","decoder_ring","minimum_context"], ["CODEC_FLOOR"], ["floor_breach","decoder_loss"], "V_res=300-800 tokens", []]
+  06: ["STORAGE", ["tier_exhale","reconstruct_on_demand"], ["TIER_HIERARCHY"], ["tier_collapse","reconstruction_fail"], "T1->T2->T3|reconstruct(T3->T2->T1)", []]
+  07: ["COLLAPSE", ["predictable_collapse","recovery_operator"], ["COLLAPSE_SEQUENCE","RECOVERY_LADDER"], ["held_inhale","truncation_by_age","gap_filling","hallucination_compound"], "H=f(δ/D_eff,T,S)", []]
+  08: ["AI_SUBSTRATE", ["context_window","attention","transformer"], ["COG_TRANSFORMER"], ["full_hallucination","ghost_stalling","token_retrieval_failure"], "H=f(δ/D_eff,T,S)", []]
+
+# ============================================================
+# CONTRACTS: [id, components, operator, collapse_modes]
+# ============================================================
+C:
+  INHALE_MECHANICS: [[1,4], "admit_nodes_above_relevance|zoom_to_query_depth", ["over_admit","threshold_miss","depth_lock"]]
+  EXHALE_MECHANICS: [[2,6], "release_resolved|retain_graph_position|prune_dead", ["premature_exhale","dangling_edge","branch_loss"]]
+  CORE_HOLD_INVARIANT: [[3], "invariants_never_release", ["invariant_drop","substrate_collapse"]]
+  CONVERSATION_GRAPH: [[4], "salience=centrality_not_recency", ["centrality_loss","rebase_fail"]]
+  BRANCH_HOLD: [[4], "latent_branches_hold_min_resolution_until_loop_closure_or_abandonment", ["branch_loss","loop_break"]]
+  LOOP_CLOSURE: [[4], "two_branches_connect_same_attractor->self_contained_topology", ["loop_break"]]
+  GRAPH_REBASE: [[4], "centrality>root->reorganize_around_new_attractor", ["rebase_fail"]]
+  SMART_TRUNCATION: [[2,4], "release_content_when_graph_position_fully_specified_by_edges", ["dangling_edge","reconstruction_fail"]]
+  TIER_HIERARCHY: [[6], "L0_prose->J_space->graph_position", ["tier_collapse"]]
+  CODEC_FLOOR: [[5], "residual_volume_always_present", ["floor_breach"]]
+  STABILITY: [[7,8], "Cs=(A_s*^0.15*R*^0.30*W*^0.25*Θ*^0.15)^(1/0.85)*1/(1+L*)", []]
+  HALLUCINATION: [[7,8], "H=f(δ/D_eff,T,S)", ["full_hallucination","ghost_stalling"]]
+  COLLAPSE_SEQUENCE: [[7], "truncation->substrate_drop->gap_filling->δ_rise->D_fall->H_compound", ["held_inhale","truncation_by_age","gap_filling"]]
+  RECOVERY_LADDER: [[7], "precision_restore->window_widen->integration_restore->res_floor_fall->gate_reopen->prior_reupdate", ["recovery_sequence_failure"]]
+
+# ============================================================
+# PRIMITIVES: [name, component, collapse_modes, measurement]
+# ============================================================
+P:
+  Inhale: [1, ["over_admit","threshold_miss"], "admitted_nodes/relevance"]
+  Exhale: [2, ["premature_exhale","branch_loss"], "released_nodes/graph_position_retention"]
+  CoreHold: [3, ["invariant_drop"], "invariant_presence"]
+  ResidualVolume: [5, ["floor_breach"], "CODEC_tokens"]
+  RelevanceThreshold: [1, ["threshold_miss"], "R_th"]
+  QueryDepth: [1, ["depth_lock"], "zoom_level"]
+  Node: [4, ["centrality_loss"], "node_id"]
+  Edge: [4, ["dangling_edge"], "edge_constraint"]
+  GraphPosition: [4, ["reconstruction_fail"], "topology_coords"]
+  Centrality: [4, ["centrality_loss"], "graph_centrality"]
+  Recency: [4, ["recency_bias"], "turn_age"]
+  Branch: [4, ["branch_loss"], "branch_state"]
+  Loop: [4, ["loop_break"], "attractor_id"]
+  Attractor: [4, ["rebase_fail"], "attractor_strength"]
+  Rebase: [4, ["rebase_fail"], "root_centrality"]
+  L0_prose: [6, ["tier_collapse"], "token_count"]
+  J_space: [6, ["tier_collapse"], "latent_density"]
+  Graph_topology: [6, ["reconstruction_fail"], "edge_count"]
+  CODEC: [5, ["floor_breach"], "token_count"]
+  Context_stability: [7, ["stability_loss"], "Cs"]
+  Hallucination_risk: [7, ["full_hallucination"], "H"]
+  delta: [7, ["gap_filling"], "δ"]
+  D_eff: [7, ["D_fall"], "D_eff"]
+  T: [7, ["temperature"], "T"]
+  S: [7, ["syntax"], "S"]
+
+# ============================================================
+# COLLAPSE_MODES: [name, components, contracts, trigger, operator_chain]
+# ============================================================
+M:
+  held_inhale: [[1,2,7], ["INHALE_MECHANICS","COLLAPSE_SEQUENCE"], "fixed_container", "fill->hold->collapse"]
+  truncation_by_age: [[2,6,7], ["EXHALE_MECHANICS","SMART_TRUNCATION"], "context_ceiling", "oldest_drop->substrate_drop"]
+  substrate_drop: [[3,7], ["CORE_HOLD_INVARIANT"], "truncation", "foundational_defs_drop->floor_loss"]
+  dangling_edges: [[4,6], ["CONVERSATION_GRAPH"], "content_drop", "edges_dangle->reconstruction_fail"]
+  reconstruction_fail: [[4,6], ["SMART_TRUNCATION"], "edge_insufficient", "no_traversal->loss"]
+  gap_filling: [[7,8], ["HALLUCINATION"], "δ_rise", "δ_rise->D_fall->H_compound"]
+  hallucination_compound: [[7,8], ["HALLUCINATION","COG_TRANSFORMER"], "no_recovery_operator", "H=f(δ/D_eff,T,S)->increase"]
+  over_admit: [[1,4], ["INHALE_MECHANICS"], "threshold_low", "too_many_nodes->context_ceiling"]
+  premature_exhale: [[2,4], ["EXHALE_MECHANICS"], "resolved_false", "release->branch_loss"]
+  branch_loss: [[4], ["BRANCH_HOLD"], "premature_exhale", "latent_branch_drop->loop_break"]
+  loop_break: [[4], ["LOOP_CLOSURE"], "branch_loss", "attractor_disconnect->topology_loss"]
+  rebase_fail: [[4], ["GRAPH_REBASE"], "centrality_error", "no_reorganize->traversal_cost_high"]
+  floor_breach: [[5], ["CODEC_FLOOR"], "residual_volume_low", "CODEC_drop->decoder_loss"]
+  tier_collapse: [[6], ["TIER_HIERARCHY"], "exhale_fail", "T1->T2->T3_fail"]
+  centrality_loss: [[4], ["CONVERSATION_GRAPH"], "recency_bias", "centrality_ignored->salience_loss"]
+  recency_bias: [[4], ["CONVERSATION_GRAPH"], "fixed_container", "recency>centrality->wrong_retrieval"]
+  depth_lock: [[1], ["INHALE_MECHANICS"], "zoom_fixed", "no_depth_adjust->miss"]
+  threshold_miss: [[1], ["INHALE_MECHANICS"], "R_th_high", "node_not_admitted->context_gap"]
+  stability_loss: [[7], ["STABILITY"], "Cs_drop", "A/R/W/Θ_drop->Cs_drop"]
+  full_hallucination: [[7,8], ["HALLUCINATION","COG_TRANSFORMER"], "narrowW+lowD+argmax", "W_collapse->D_eff_low->argmax->fabrication"]
+  ghost_stalling: [[8], ["COG_TRANSFORMER"], "compliance+high_amp+sim", "amp_brought->sim_return->no_change"]
+  recovery_sequence_failure: [[7], ["RECOVERY_LADDER"], "wrong_order", "wrong_order->R_fail->stuck"]
+
+# ============================================================
+# MAPPINGS: [context_oscillator, URM_CORE, Central_Reference]
+# ============================================================
+Y:
+  Inhale: ["WINDOWS_COG", "window_collapse", "CR:W*"]
+  Exhale: ["GLYMPH_AUTO", "oscillation_loss", "CR:R*"]
+  CoreHold: ["PROPRIO_AUTO_COG", "gating_failure", "CR:Θ*"]
+  Graph: ["COG_TRANSFORMER", "token_retrieval_failure", "CR:W*,Θ*"]
+  CODEC: ["RESOURCE_PHASE_BOUNDARY", "substrate_collapse", "CR:L*"]
+  Stability: ["JOINT_SYSTEM_CONSCIOUSNESS", "depression_threshold", "CR:Cs"]
+  Hallucination: ["COG_TRANSFORMER", "full_hallucination", "CR:H"]
+  Collapse: ["COLLAPSE_SEQUENCE", "any", "CR:Part V"]
+  Recovery: ["RECOVERY_LADDER", "recovery_sequence_failure", "CR:Part V"]
+
+# ============================================================
+# PREDICTIONS: [id, components, contract, description]
+# ============================================================
+Q:
+  P_CO_01: [[1,2,7], ["INHALE_MECHANICS","EXHALE_MECHANICS"], "dynamic_membrane_reduces_H_vs_fixed_container"]
+  P_CO_02: [[3], ["CORE_HOLD_INVARIANT"], "core_hold_prevents_substrate_collapse"]
+  P_CO_03: [[4], ["CONVERSATION_GRAPH"], "graph_centrality_predicts_retrieval_better_than_recency"]
+  P_CO_04: [[2,4], ["SMART_TRUNCATION"], "smart_truncation_is_lossless_under_edge_sufficiency"]
+  P_CO_05: [[1,2], ["INHALE_MECHANICS","EXHALE_MECHANICS"], "oscillator_cycles_reduce_context_ceiling_pressure"]
+  P_CO_06: [[5], ["CODEC_FLOOR"], "CODEC_floor_maintains_minimum_coherence"]
+  P_CO_07: [[4], ["LOOP_CLOSURE"], "loop_closure_enables_compression"]
+  P_CO_08: [[4], ["GRAPH_REBASE"], "graph_rebase_lowers_traversal_cost"]
+  P_CO_09: [[7,8], ["HALLUCINATION"], "H_increases_as_Cs_falls"]
+  P_CO_10: [[7], ["COLLAPSE_SEQUENCE"], "collapse_sequence_predictable_from_context_fill"]
+
+# ============================================================
+# PROPAGATION: [source, target, mechanism, collapse_modes]
+# ============================================================
+R:
+  inhale_to_graph: ["1->4", "admit_nodes_sets_graph", ["over_admit->centrality_loss"]]
+  graph_to_exhale: ["4->2", "centrality_sets_release", ["centrality_loss->premature_exhale"]]
+  exhale_to_core: ["2->3", "release_resolved_keeps_core", ["premature_exhale->invariant_drop"]]
+  core_to_codec: ["3->5", "core_hold_sets_floor", ["invariant_drop->floor_breach"]]
+  truncation_to_collapse: ["2->7", "truncation_triggers_collapse", ["truncation_by_age->substrate_drop"]]
+  delta_to_H: ["7->8", "δ_rise_sets_H", ["gap_filling->full_hallucination"]]
+  Cs_to_H: ["7->8", "Cs_fall_sets_H_rise", ["stability_loss->full_hallucination"]]
+  rebase_to_traversal: ["4->4", "rebase_lowers_traversal_cost", ["rebase_fail->traversal_cost_high"]]
+
+# ============================================================
+# MEASUREMENTS: [variable, component, measurement, status]
+# ============================================================
+V:
+  Context_stability: [7, "Cs=(A_s*^0.15*R*^0.30*W*^0.25*Θ*^0.15)^(1/0.85)*1/(1+L*)", "R"]
+  Hallucination_risk: [7, "H=f(δ/D_eff,T,S)", "R"]
+  delta: [7, "δ", "R"]
+  D_eff: [7, "D_eff", "R"]
+  T: [7, "temperature", "R"]
+  S: [7, "syntax", "R"]
+  CODEC_tokens: [5, "300-800", "R"]
+  Graph_centrality: [4, "centrality(N)", "P"]
+  Recency: [4, "turn_age", "P"]
+  Edge_constraint: [4, "edge_sufficiency", "P"]
+  Branch_state: [4, "branch_hold/abandon/closed", "P"]
+  Loop_attractor: [4, "attractor_id", "P"]
+  Rebase_root: [4, "root_centrality", "P"]
+
+# ============================================================
+# OPEN: [variable, component, gap, contract]
+# ============================================================
+O:
+  Relevance_threshold: [1, "R_th_calibration", "INHALE_MECHANICS"]
+  Query_depth: [1, "zoom_depth_protocol", "INHALE_MECHANICS"]
+  Exhale_policy: [2, "release_rule", "EXHALE_MECHANICS"]
+  Edge_sufficiency: [4, "edge_constraint_formalization", "SMART_TRUNCATION"]
+  Centrality_metric: [4, "centrality_definition", "CONVERSATION_GRAPH"]
+  Rebase_trigger: [4, "centrality>root_threshold", "GRAPH_REBASE"]
+  CODEC_size: [5, "300-800_optimal", "CODEC_FLOOR"]
+  Tier_transition: [6, "T1->T2->T3_thresholds", "TIER_HIERARCHY"]
+  Recovery_operator: [7, "recovery_operator_implementation", "RECOVERY_LADDER"]
+  H_function: [7, "H=f(δ/D_eff,T,S)_calibration", "HALLUCINATION"]
+  Cs_exponents: [7, "exponent_calibration", "STABILITY"]
+
+# ============================================================
+# REASONING_FAILURES: [group, mode, description]
+# ============================================================
+F:
+  fixed_container: ["held_inhale", "context treated as storage, not membrane"]
+  recency_bias: ["centrality_loss", "salience by age not graph position"]
+  substrate_drop: ["substrate_collapse", "foundational definitions dropped first"]
+  no_recovery: ["recovery_sequence_failure", "no operator to restore Cs"]
+  edge_naive: ["reconstruction_fail", "content dropped without edge sufficiency"]
+  codec_absent: ["floor_breach", "no residual volume floor"]
